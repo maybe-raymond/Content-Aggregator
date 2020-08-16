@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-page">
+  <form method="post">
+{{ form.csrf_token }}
+ {{ form.hidden_tag() }}
+{{form.username.label}}
+{{form.username}}
+{{form.password.label}}
+{{form.password}}
+{{form.remember.label}}
+{{form.remember }}
+{{form.submit.label}}
+{{form.submit}}
+<p>Don't have ann account ? so make one <a href="{{url_for('registration')}}">click here</a></p>
+</form>
+</div>
+
+{% endblock content %}

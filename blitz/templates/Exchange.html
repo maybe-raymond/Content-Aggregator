@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-page">
+  <div class="box">
+    <p>{{ zimrates.name}} : {{ zimrates.rtgs }} </p>
+  </div>
+
+  <div class="box">
+     <p>{{ OMIR.name }} : {{ OMIR.rtgs }} </p>
+   </div>
+
+   <div class="box">
+     <p>{{ interbank.name }} : {{ interbank.rtgs }}  </p>
+   </div>
+
+   <div class="box">
+     <p>{{ zimrates_bond.name }} : {{ zimrates_bond.rtgs }}  </p>
+   </div>
+</div>
+{%  endblock %}

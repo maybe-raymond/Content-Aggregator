@@ -1,0 +1,144 @@
+:root{
+  --v-length:900px;
+  --main_red_color:#B82B2B;
+  --main_white_color:white;
+  --main_grey_color:#2E2E2E;
+  --width_side_logo :235px;
+  --border_rad:20px;
+}
+body{
+  background-color: var(--main_grey_color);
+  margin:0px;
+  padding:0px;
+  color: var(--main_white_color);
+  display: flex;
+  align-items:flex-start;
+  flex-shrink: 2;
+}
+.top{
+  display:flex;
+  flex-direction:column;
+  max-width: 100%;
+  border-right: solid #797979 1px;
+  position:fixed
+}
+.top-nav{
+  width:var(--width_side_logo);
+  height: 67px;
+  background-color:var(--main_red_color);
+  text-align:center;
+  margin-bottom: 0px;
+  position:fixed;
+}
+#name{
+  font-size: 48px;
+  color:var(--main_white_color);
+  text-decoration:none;
+  font-style:normal;
+  font-weight:900;
+  line-height:62px;
+}
+.main-content{
+  margin-left:20px;
+}
+#header-name{
+  color: #DDDDDD;
+  width: 409px;
+  font-style: normal;
+  font-size: 2.125rem;
+  margin:0px;
+  margin-bottom:25px;
+}
+.main-page{
+  padding:0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:100%;
+  max-width: 100%;
+  margin-left:250px;
+}
+.left-panel{
+  width: var(--width_side_logo);
+  height: 908px;
+  background-color:var(--main_grey_color);
+  margin-top:0px;
+  padding:0px;
+  text-align:left;
+  margin-top:67px;
+}
+.left-panel a:hover{
+  color: var(--main_red_color);
+  width:150px;
+  border-bottom: 2px solid var(--main_red_color);
+  border-width:thick -1px;
+}
+li{
+  text-decoration:none;
+  list-style-type:none;
+  margin-bottom:20px;
+}
+.nav{
+  font-size:1.85rem;
+  position:fixed;
+}
+.current-tab{
+  color: var(--main_red_color);
+  width:150px;
+  border-bottom: 2px solid var(--main_red_color);
+  border-width:thick -1px;
+}
+.container{
+  display: flex;
+  flex-direction:column
+}
+
+#f-zim{
+  font-size: 1.8rem;
+  color: #818181;
+  border-bottom: solid 1px;
+}
+
+header{
+  color: rgba(255,255,255,0.88);
+  margin-top:
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 35px;
+}
+.title{
+  color:var(--main_white_color);
+  display: inline-block;
+  font-size:1.4rem;
+  width:100%;
+  margin:0px;
+  padding:0px;
+  letter-spacing: -.04
+}
+form{
+  display: block;
+}
+a:link{
+  text-decoration: none;
+  color: var(--main_white_color)
+}
+a:visited{
+  color: var(--main_white_color)
+}
+a:hover{
+  color: var(--main_red_color);
+}
+@media only screen and (max-width: 700px) {
+  .top{
+    display: none;
+  }
+  .main-page{
+    margin:0px;
+  }
+  .title{
+    font-size:2rem;
+  }
+}

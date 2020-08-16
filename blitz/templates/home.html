@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-page">
+  <h1 id="header">top stories</h1>
+  <p id="f-zim">The  front page of Zimbabwe</p>
+  <div class="container">
+
+    <div class="box">
+      <header>The Hearld</header>
+        {% for i in  hearld.items %}
+          <a class="title" href="{{ i.link }}">{{  i.title }}</a>
+        {% endfor %}
+        <a href="{{ url_for('View_more', article_source='THE Herald')}}">more</a >
+  </div>
+
+
+  <div class="box">
+      <header> H- Metro</header>
+      {% for i in  h_metro.items %}
+        <a class="title" href="{{ i.link }}">{{  i.title }}</a>
+      {% endfor %}
+      <a href="{{ url_for('View_more', article_source ='H-Metro')}}">more</a>
+  </div>
+
+
+  <div class="box">
+    <header>The Daliynews</header>
+      {% for i in  daily_news.items %}
+        <a class="title" href="{{ i.link }}">{{  i.title }}</a>
+      {% endfor %}
+      <a href="{{ url_for('View_more', article_source='Daily News')}}">more</a>
+  </div>
+
+
+
+  <div class="box">
+    <header>The Zimbabwean</header>
+      {% for i in   the_zim.items %}
+        <a class="title" href="{{ i.link }}">{{  i.title }}</a>
+      {% endfor %}
+      <a href="{{ url_for('View_more', article_source='The Zimbabwean')}}">more</a>
+  </div>
+
+
+  <div class="box">
+      <header>The news day</header>
+    {% for i in  news_day.items %}
+      <a class="title" href="{{ i.link }}">{{  i.title }}</a>
+    {% endfor %}
+    <a href="{{ url_for('View_more', article_source=NewsDay )}}">more</a>
+  </div>
+
+</div>
+</div>
+{% endblock content %}

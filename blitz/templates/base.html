@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{  url_for('static', filename='main.css') }}"></link>
+</head>
+<body>
+  <div class="top">
+    <div class="top-nav">
+      <a href="{{ url_for("home") }}" id="name">Blitz</a>
+    </div>
+    <div class="left-panel">
+      <ul class="nav">
+        <li class="current-tab"><a href='{{ url_for("home") }}'>Top stories</a></li>
+        <li><a href='{{ url_for("Exchange") }}'>Exchange rate</a></li>
+        <li><a href='{{ url_for("Covid_19") }}'>Covid 19</a></li>
+        {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('account')}}">Account</a></li>
+          {% else %}
+              <li><a href="{{url_for('Login')}}">login</a></li>
+        <li><a></a></li>
+        <li><a></a></li>
+        {% endif %}
+
+      </ul>
+  </div>
+  </div>
+  {% block content %}{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-page">
+  <form method="post">
+    {{ form.csrf_token  }}
+    {{ form.hearld.label }}
+    {{ form.hearld }}
+    {{ form.Hmetro.label }}
+    {{ form.Hmetro }}
+    {{ form.Dailynews.label }}
+    {{ form.Dailynews }}
+    {{ form.The_Zimbabwean.label }}
+    {{ form.The_Zimbabwean }}
+    {{ form.NewsDay.label }}
+    {{ form.NewsDay }}
+    {{ form.submit  }}
+</form>
+<a href="{{ url_for("Logout")}}">logout </a>
+<a href="{{ url_for("test")}}">send </a>
+</div>
+{%  endblock %}
