@@ -1,0 +1,46 @@
+<html>
+<head>
+<style>
+:root{
+  --v-length:900px;
+  --main_red_color:#B82B2B;
+  --main_white_color:white;
+  --main_grey_color:#2E2E2E;
+  --width_side_logo :235px;
+  --border_rad:20px;
+}
+.title{
+  color:var(--main_white_color);
+  display: inline-block;
+  font-size:1.4rem;
+  width:100%;
+  margin:0px;
+  padding:0px;
+  letter-spacing: -.04
+}
+a:link{
+  text-decoration: none;
+  color: var(--main_white_color)
+}
+a:visited{
+  color: var(--main_white_color)
+}
+a:hover{
+  color: var(--main_red_color);
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 35px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+{% for i in news %}
+<a class="title" href="{{ i.link }}">{{  i.title }}</a>
+{% endfor %}
+</div>
+</body>
+</html>

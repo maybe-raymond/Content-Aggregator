@@ -1,40 +1,22 @@
 from flask_wtf import FlaskForm
-from blitz.models import User
+from blitz.models import User, Followers
 from wtforms import StringField, PasswordField, SubmitField, DateTimeField, BooleanField, TextAreaField
-from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
-
+from wtforms.validators import DataRequired, ValidationError
+from email_validator import validate_email,  EmailNotValidError
 
 
 class registration_Form(FlaskForm):
-    username = StringField("Username", validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField("Email", validators=[DataRequired()])
-    password = PasswordField("password", validators=[DataRequired()])
-    confirm_password = PasswordField("confirm password", validators=[DataRequired(), EqualTo("password")])
-    check = BooleanField("check")
     submit=SubmitField("sign up")
 
-    def email_Validate(self, email):
-        user = User.query.filter_by(email =email.data).first()
-        if user:
-            raise ValidationError("This email aready exists")
-
-
-    def user_Validate(self, password):
-        user = User.query.filter_by(username = username.data).first()
-        if user:
-            raise ValidationError("This Username is aready taken")
-
-
-class Login_Form(FlaskForm):
-    username =   StringField("Username")
-    password =  PasswordField("password")
-    remember = BooleanField("Remember me")
-    submit = SubmitField("Log in ")
-
-
-class Comment_Form(FlaskForm):
-    content = TextAreaField("Comment")
-    submit = SubmitField("Post")
+    def validate_email(self, email):
+        try:
+            valid = validate_email(email.data)
+            user = User.query.filter_by(Email=email.data).first()
+            if user:
+                raise ValidationError("You are already registered for the newsletter ")
+        except EmailNotValidError as e:
+            raise e
 
 
 class Choice_Form(FlaskForm):
